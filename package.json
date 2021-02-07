@@ -1,0 +1,27 @@
+{
+  "name": "dogecoin-visualizer",
+  "version": "1.0.0",
+  "description": "A web application for visualizing the activity of dogecoin.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacklmiller97/dogecoin-visualizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacklmiller97/dogecoin-visualizer/issues"
+  },
+  "homepage": "https://github.com/jacklmiller97/dogecoin-visualizer#readme",
+  "dependencies": {
+    "universal-ws": "^0.2.9"
+  },
+  "devDependencies": {
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}
