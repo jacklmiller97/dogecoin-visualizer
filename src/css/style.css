@@ -1,0 +1,26 @@
+html,body {
+	height : 100vh;
+	width  : 100vw;
+}
+
+#app {
+	position : relative;
+	height   : 100%;
+	width    : 100%;
+	overflow : hidden;
+}
+
+.doge-block {
+	animation : doge-slide 10s linear;
+	background : black;
+}
+
+@keyframes doge-slide {
+	from {
+		transform:translateX(0);
+	}
+
+	to {
+		transform:translateX(-100px);
+	}
+}
