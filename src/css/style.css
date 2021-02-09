@@ -1,6 +1,7 @@
 html,body {
-	height : 100vh;
-	width  : 100vw;
+	height     : 100vh;
+	width      : 100vw;
+	background : #fff0ad;
 }
 
 #app {
@@ -11,8 +12,24 @@ html,body {
 }
 
 .doge-block {
-	animation : doge-slide 10s linear;
-	background : black;
+	display                   : flex;
+	flex-direction            : column;
+	align-items               : center;
+	justify-content           : center;
+	text-align                : center;
+	background                : url("../img/doge.png");
+	background-size           : cover;
+	background-color          : #ba9f33;
+	border                    : 2px white solid;
+	box-shadow                : 10px 10px 30px rgb(121, 121, 121);
+	animation                 : doge-slide linear;
+	animation-iteration-count : 1;
+}
+
+.doge-block div {
+	font-family : cursive;
+	font-size   : 1rem;
+	color       : white;
 }
 
 @keyframes doge-slide {
@@ -21,6 +38,6 @@ html,body {
 	}
 
 	to {
-		transform:translateX(-100px);
+		transform:translateX(-105vw);
 	}
 }
