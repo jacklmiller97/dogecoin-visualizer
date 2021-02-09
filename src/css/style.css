@@ -4,6 +4,31 @@ html,body {
 	background : #fff0ad;
 }
 
+.background {
+	position        : absolute;
+	display         : flex;
+	justify-content : center;
+	height          : 100%;
+	width           : 100%;
+	font-family     : "Comic Sans MS", "Comic Sans", cursive;
+	text-align      : center;
+	color           : white;
+}
+
+.title {
+	position    : absolute;
+	align-self  : center;
+	font-size   : 5rem;
+	user-select : none;
+}
+
+.donate {
+	position    : absolute;
+	bottom      : 10px;
+	font-size   : 1.5rem;
+	user-select : text;
+}
+
 #app {
 	position : relative;
 	height   : 100%;
@@ -17,6 +42,10 @@ html,body {
 	align-items               : center;
 	justify-content           : center;
 	text-align                : center;
+	text-shadow: -1px 1px 0 #fff,
+				  1px 1px 0 #fff,
+				 1px -1px 0 #fff,
+				-1px -1px 0 #fff;
 	background                : url("../img/doge.png");
 	background-size           : cover;
 	background-color          : #ba9f33;
@@ -27,7 +56,7 @@ html,body {
 }
 
 .doge-block div {
-	font-family : cursive;
+	font-family : "Comic Sans MS", "Comic Sans", cursive;
 	font-size   : 1rem;
 	color       : white;
 }
