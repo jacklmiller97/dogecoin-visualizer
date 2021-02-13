@@ -3,29 +3,45 @@ import "../css/reset.css";
 import "../css/style.css";
 
 const HOST = `wss://ws.dogechain.info/inv`;
-const ws   = new WebSocket(HOST);
 const app  = document.getElementById('app');
 
+// This will inform DogeBlock about whether to bark or not.
 let playAudio = false;
 
-// Connection opened
-ws.addEventListener('open', function (event) {
-    ws.send('{"op":"blocks_sub"}');
-});
+function connect() {
+	let ws = new WebSocket(HOST);
 
-// Listen for messages
-ws.addEventListener('message', function (event) {
-    const dogeBlockData = JSON.parse(event.data);
+	// Connection opened
+	ws.addEventListener('open', (e) => {
+		ws.send('{"op":"blocks_sub"}');
+	});
 
-    if (dogeBlockData.op !== "block") {
-        return;
-    }
+	// If the connection closes for whatever reason, reopen it.
+	ws.addEventListener('close', (e) => {
+		console.log('Socket is closed. Reconnect will be attempted in 1 second.', e.reason);
+		setTimeout(() => {
+			connect();
+		}, 1000);
+	});
 
-    const dogeBlock = new DogeBlock(dogeBlockData.x, playAudio);
+	// Listen for messages
+	ws.addEventListener('message', (e) => {
+		const dogeBlockData = JSON.parse(e.data);
 
-    dogeBlock.addToDOM(app);
-});
+		if (dogeBlockData.op !== "block") {
+			return;
+		}
 
+		const dogeBlock = new DogeBlock(dogeBlockData.x, playAudio);
+
+		dogeBlock.addToDOM(app);
+	});
+}
+
+// Init WebSocket.
+connect();
+
+// Listen for clicks to the audio controls.
 document.addEventListener('click', (e) => {
 	if (e.target.classList.contains('mute')) {
 		document.querySelectorAll('audio').forEach((audio) => {

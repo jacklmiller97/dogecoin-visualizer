@@ -10,7 +10,7 @@ html,body {
 	justify-content : center;
 	height          : 100%;
 	width           : 100%;
-	font-family     : "Comic Sans MS", "Comic Sans", cursive;
+	font-family     : "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
 	text-align      : center;
 	color           : white;
 	text-shadow: -1px 1px 0 rgb(100, 100, 100),
@@ -81,7 +81,7 @@ html,body {
 }
 
 .doge-block div {
-	font-family : "Comic Sans MS", "Comic Sans", cursive;
+	font-family : "Comic Sans MS", "Comic Sans", "Comic Neue", cursive;
 	font-size   : 1rem;
 	color       : white;
 }
